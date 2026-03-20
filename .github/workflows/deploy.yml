@@ -6,6 +6,7 @@ permissions:
   pages: write
   id-token: write
 
+# ▼ 바로 이 부분을 추가하면 경고가 사라집니다!
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -18,7 +19,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: '25' # 프로젝트가 사용하는 Node 버전 (내부 실행 버전과 별개)
+          node-version: '25' 
           cache: 'npm'
           cache-dependency-path: subdir/package-lock.json
       - name: Install dependencies
