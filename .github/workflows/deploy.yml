@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist # Vite 빌드 결과물이 저장되는 폴더
   deploy:
