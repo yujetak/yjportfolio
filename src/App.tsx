@@ -132,7 +132,7 @@ function Hero() {
         Available for Financial Tech Roles
       </div>
       <h1 className="hero-title fade-in" style={{ animationDelay: '0.2s' }}>
-        Reliable Solutions for <br /> Future Finance.
+        작성중인 포트폴리오 페이지입니다<br /> Future Finance.
       </h1>
       <p className="hero-subtitle fade-in" style={{ animationDelay: '0.4s' }}>
         Result-driven developer focusing on performance, security, and scalability in financial systems.
