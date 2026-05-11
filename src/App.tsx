@@ -1,6 +1,6 @@
-import './App.css';
-import architectureP4rag from './assets/architecture-p4rag.png';
-import architectureStocklab from './assets/architecture-stocklab.png';
+import "./App.css";
+import architectureP4rag from "./assets/architecture-p4rag.png";
+import architectureStocklab from "./assets/architecture-stocklab.png";
 
 interface Project {
   id: number;
@@ -11,13 +11,14 @@ interface Project {
   highlights: string[];
   description: string;
   imageUrl: string;
-  videoUrl?: string; // 영상 링크 추가
+  videoUrl?: string;
   isTeam?: number;
   achievement?: string;
   review?: string;
   links?: { label: string; url: string; icon?: string }[];
+  category: "research" | "team" | "personal"; // 카테고리 추가
+  isFeatured?: boolean; // 메인 노출 여부
 }
-
 
 const projects: Project[] = [
   {
@@ -31,14 +32,14 @@ const projects: Project[] = [
       "연구지원사업: 한국연구재단(NRF)주관 석사과정생 연구장려금 지원사업 선정 및 연구 수행",
       "연구개발목표: 검색증강생성(RAG) 기술을 활용하여, P4 언어 기반 네트워크 기능 설계 코드 템플릿을 생성한다",
     ],
-
-    description: "프롬프트 엔지니어링을 통해 자연어 기반의 네트워크 기능 요구사항을 이해하고, 최신 도메인 지식을 참조하여 P4 코드 템플릿을 자동 생성한다",
+    description:
+      "대규모 언어 모델이 네트워크 도메인 특화 언어 P4에 대한 지식이 적거나 최신 문법 코드 생성 품질이 낮다는 점에 기인하여, RAG를 활용하여 P4_16 버전의 코드 템플릿을 생성하는 시스템을 구축하였다 ",
     imageUrl: architectureP4rag,
     isTeam: 1,
     achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 게재 예정(심사완료)",
-    links: [
-      { label: "포스터 논문", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318586" }
-    ]
+    links: [{ label: "포스터 논문", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318586" }],
+    category: "research",
+    isFeatured: true,
   },
 
   {
@@ -50,18 +51,20 @@ const projects: Project[] = [
     highlights: [
       "한국투자증권(KIS) REST, Websocket API - 종목 정보·실시간 시세 수집 후 Mariadb 및 Redis 저장",
       "APscheduler cron, interval 설정 - 토큰 자동발급, 장 종료 후 당일 시가·종가·최조가·최저가 수집 및 저장",
-      "관리자 페이지 풀스택 개발 - JWT 토큰 기반 권한 확인, 사용자 데이터 집계, 토큰 TTL 확인 후 상태 표시"
+      "관리자 페이지 풀스택 개발 - JWT 토큰 기반 권한 확인, 사용자 데이터 집계, 토큰 TTL 확인 후 상태 표시",
     ],
-    description: "KIS API 연동(Redis 토큰 관리), 종목 검색 및 현재가 REST API, 실시간 시세 WebSocket 수신 및 Redis 캐싱, 관리자 대시보드 풀스택 개발",
+    description:
+      "KIS API 연동(Redis 토큰 관리), 종목 검색 및 현재가 REST API, 실시간 시세 WebSocket 수신 및 Redis 캐싱, 관리자 대시보드 풀스택 개발",
     imageUrl: architectureStocklab,
     isTeam: 6,
-    review: "예외 처리의 중요성을 알게 되었습니다. 처음에는 API 응답값이 당연히 정상적으로 들어올 것이라 가정하였으나, \
+    review:
+      "예외 처리의 중요성을 알게 되었습니다. 처음에는 API 응답값이 당연히 정상적으로 들어올 것이라 가정하였으나, \
     오류 발생 시 원인을 파악하기 어려운 경우가 있었습니다. \
     try-except로 예외를 잡고 print문으로 출력을 정리하니 문제 지점을 빠르게 좁혀나갈 수 있었고, \
     디버깅 효율이 크게 달라진다는 것을 알게 되었습니다.",
-    links: [
-      { label: "GitHub", url: "https://github.com/human13th2team/StockLab" }
-    ],
+    links: [{ label: "GitHub", url: "https://github.com/human13th2team/StockLab" }],
+    category: "team",
+    isFeatured: true,
   },
 
   {
@@ -69,20 +72,19 @@ const projects: Project[] = [
     title: "네모의 꿈 - 과사물함 대여 서비스",
     period: "2023.06 - 2023.08(웹서비스 개발), 2023.11 - 2023.12(쿠버네티스 배포)",
     role: "프로젝트 리더 (PL), Full-stac",
-    techStack: ["React", "Recoil", "Express", "MySQL", "Docker", "AWS EC2", "AWS RDS", "Kubernetes", "GKE"],
+    techStack: ["React", "Recoil", "Node.js", "Express", "MySQL", "Docker", "AWS EC2", "AWS RDS", "Kubernetes", "GKE"],
     highlights: [
       "Full-Stack: 사물함 생성·조회·대여·반납 전체 플로우를 React(Recoil) + Express REST API로 풀스택 개발",
       "Cloud: AWS EC2/RDS/Load Balancer/Route 53으로 백엔드 배포, HTTPS Mixed Content 문제 해결",
-      "K8s: GKE 기반 프론트엔드 Kubernetes 배포 — Deployment(replica 2), LoadBalancer Service, ConfigMap으로 환경변수 관리"
+      "K8s: GKE 기반 프론트엔드 Kubernetes 배포 — Deployment, LoadBalancer Service, ConfigMap으로 환경변수 관리",
     ],
     description: "학생회의 엑셀 기반 사물함 관리를 웹 서비스로 전환한 프로젝트.",
     imageUrl: "https://storage.googleapis.com/uxpilot-auth.appspot.com/5f778d1217-063fddd80026e6f1f44d.png",
     videoUrl: "https://drive.google.com/file/d/1aCIvmrIYaSELHxPKExo7DfUVaRkCf0s3/preview",
     isTeam: 3,
     achievement: "2023 성신여자대학교 소프트웨어경진대회 금상 수상, 2023 클라우드컴퓨팅 A+ 학점 취득",
-    links: [
-      { label: "GitHub", url: "https://github.com/cl0ud4" }
-    ]
+    links: [{ label: "GitHub", url: "https://github.com/cl0ud4" }],
+    category: "team",
   },
   {
     id: 4,
@@ -93,7 +95,7 @@ const projects: Project[] = [
     highlights: [
       "Full-Stack: 공동구매방 생성부터 입금폼 제작·작성·제출·계좌 확인·결과 통계까지 전체 플로우 풀스택 개발",
       "DB Design: 입금폼–문항–답변자–답변의 1:N:N:N 약한 개체 관계를 DB 재설계로 해결(1:N)",
-      "Documentation: 회의록·노션·보고서 등 팀 협업 문서화 총괄 담당"
+      "Documentation: 회의록·노션·보고서 등 팀 협업 문서화 총괄 담당",
     ],
     description: "여러 플랫폼에 분산된 대학 공동구매 절차를 하나의 웹 서비스로 통합한 프로젝트. GCP VM 인스턴스 분리 배포.",
     imageUrl: "https://storage.googleapis.com/uxpilot-auth.appspot.com/5f778d1217-063fddd80026e6f1f44d.png",
@@ -102,10 +104,70 @@ const projects: Project[] = [
     achievement: "2023 서버시스템 구축실습 A+ 학점 취득",
     links: [
       { label: "GitHub", url: "https://github.com/SungshinMine09/sungshin-mine-09?tab=readme-ov-file" },
+      { label: "프로젝트 보고서", url: "https://docs.google.com/document/d/1hPW3Lu_mcUo-SwI0rRQvvo2v7UJczQ8OOJbo9Rlear0/edit?usp=sharing" },
       { label: "Notion", url: "https://www.notion.so/9b143de9312b485db13055ae2a097927?pvs=25" },
-      { label: "프로젝트 보고서", url: "https://docs.google.com/document/d/1hPW3Lu_mcUo-SwI0rRQvvo2v7UJczQ8OOJbo9Rlear0/edit?usp=sharing" }
-    ]
-  }
+    ],
+    category: "team",
+  },
+  {
+    id: 5,
+    title: "개인 프로젝트 #1 - [신용점수 예측 플랫폼]",
+    period: "2026. 04. 13 - 2026. 04. 17 (4일) ",
+    role: "DL / RAG Engineering",
+    techStack: ["Python", "DNN", "XGBoost", "RAG", "MLflow", "SMOGN", "Gradio", "HuggingFace"],
+    description: "신용관리 진입장벽을 낮추고자, 입력값에 따라 신용점수를 예측하는 딥러닝 모델 개발 및 예측 결과 상담 RAG 챗봇 웹 서비스 구현",
+    highlights: [
+      "DNN 하이퍼파라미터 최적화 및 XGBoost와 성능 비교",
+      "Feature Engineering으로 데이터 편향 개선",
+      "딥러닝 데이터셋(AIHub 금융 합성 데이터), RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용"],
+    imageUrl: "https://drive.google.com/file/d/1QXnBx6xIH12GIwK8bRNNtWBEICq19A19/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/11u1rULYc-r8U9QiWAsTWvnvXOvqhSUwl/view?usp=sharing",
+    category: "personal",
+    links: [
+      { label: "보고서", url: "https://drive.google.com/file/d/1K_-9yepnzzGjPctqOBehYIiK-txTgkAh/view?usp=drive_link" },
+      { label: "서비스", url: "https://huggingface.co/spaces/dev-yuje/gardio_test" },
+    ],
+    isFeatured: true,
+  },
+  {
+    id: 6,
+    title: "개인 프로젝트 #2 - [경기도 상권매출 예측]",
+    period: "2026. 04. 04 - 2026. 04. 09 (5일)",
+    role: "DL Engineer",
+    techStack: ["Python", "RNN", "LSTM", "BiLSTM", "GRU", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "Keras", "Streamlit"],
+    description: "이자영업자들을 위한 경기도 상권매출 예측 웹 서비스 구현",
+    highlights: [
+      "시계열 모델 학습 및 RNN 하이퍼파라미터 최적화",
+      "주기성을 갖는 월(month) 속성 Cyclic Encoding 적용",
+      "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델 선정"
+    ],
+    imageUrl: "https://drive.google.com/file/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/view?usp=sharing",
+    category: "personal",
+    links: [
+      { label: "보고서", url: "https://drive.google.com/file/d/16Ama5qcEKbUMKesOf8gD9unqgY2r2vhG/view?usp=sharing" },
+      { label: "서비스", url: "https://gyeonggi-do-sales-prediction.streamlit.app/" },
+    ],
+  },
+  {
+    id: 7,
+    title: "개인 프로젝트 #3 - [투자 성향 예측]",
+    period: "2026. 03. 30 - 2026. 04. 03 (4일)",
+    role: "ML Engineer",
+    techStack: ["Python", "Decision Tree", "Random Forest Classifier", "XGBClassifier", "KNN", "SVM", "Pandas", "Numpy", "Scikit-learn"],
+    highlights: [
+      "자연어 기반 투자 성향 카테고리를 인코딩하여 Permutation Importance 추출",
+      "정확도 평가 결과: Random Forest Classifier(79%), Decision Tree(77%),XGBClassifier(77%), KNN(77%), SVM(72%)",
+      "Kaggle Finance_trends 2020-2025 데이터셋 활용(인도개인투자자 12,000명 설문조사)"
+    ],
+    description: "투자 성향 다각화에 따른 분석 어려움 문제를 해결하기 위한, AI 기반 투자 성향 분류 모델 구현",
+    imageUrl: "https://drive.google.com/file/d/1dquXj4nTthVGMSfJHIeibkjOlJjclQMf/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/view?usp=sharing",
+    links: [
+      { label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" },
+    ],
+    category: "personal",
+  },
 ];
 
 function Header() {
@@ -114,10 +176,18 @@ function Header() {
       <div className="container nav-inner">
         <div className="logo-text">YJ TAK.</div>
         <nav className="nav-links">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#research" className="nav-link">Research</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <a href="#home" className="nav-link">
+            Home
+          </a>
+          <a href="#featured" className="nav-link">
+            Featured
+          </a>
+          <a href="#team" className="nav-link">
+            Team Projects
+          </a>
+          <a href="#personal" className="nav-link">
+            Personal Projects
+          </a>
         </nav>
       </div>
     </header>
@@ -131,15 +201,18 @@ function Hero() {
         <span className="badge-dot"></span>
         Available for Financial Tech Roles
       </div>
-      <h1 className="hero-title fade-in" style={{ animationDelay: '0.2s' }}>
-        작성중인 포트폴리오 페이지입니다<br /> Future Finance.
+      <h1 className="hero-title fade-in" style={{ animationDelay: "0.2s" }}>
+        Full-Stack & AI Developer
+        <br /> for Future Finance
       </h1>
-      <p className="hero-subtitle fade-in" style={{ animationDelay: '0.4s' }}>
-        Result-driven developer focusing on performance, security, and scalability in financial systems.
-        Experienced in building high-frequency data pipelines and secure banking infrastructures.
+      <p className="hero-subtitle fade-in" style={{ animationDelay: "0.4s" }}>
+        Result-driven developer focusing on performance, security, and scalability in financial systems. Experienced in building
+        high-frequency data pipelines and secure banking infrastructures.
       </p>
-      <div className="fade-in" style={{ animationDelay: '0.6s' }}>
-        <a href="#projects" className="btn">Explore Projects</a>
+      <div className="fade-in" style={{ animationDelay: "0.6s" }}>
+        <a href="#projects" className="btn">
+          Explore Projects
+        </a>
       </div>
     </section>
   );
@@ -155,9 +228,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="header-right">
           <div className="project-period">{project.period}</div>
-          {project.isTeam && project.isTeam > 1 && (
-            <div className="team-info">팀 프로젝트 ({project.isTeam}인)</div>
-          )}
+          {project.isTeam && project.isTeam > 1 && <div className="team-info">팀 프로젝트 ({project.isTeam}인)</div>}
         </div>
       </div>
 
@@ -165,19 +236,10 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="project-media">
           {project.videoUrl ? (
             <div className="video-container">
-              <iframe
-                src={project.videoUrl}
-                width="100%"
-                height="100%"
-                allow="autoplay"
-                title={project.title}
-              ></iframe>
+              <iframe src={project.videoUrl} width="100%" height="100%" allow="autoplay" title={project.title}></iframe>
             </div>
           ) : (
-            <img
-              src={project.imageUrl}
-              alt={project.title}
-            />
+            <img src={project.imageUrl} alt={project.title} />
           )}
         </div>
 
@@ -188,14 +250,13 @@ function ProjectCard({ project }: { project: Project }) {
             <h4 className="section-title">Key Highlights</h4>
             <ul className="results-list">
               {project.highlights.map((point, idx) => {
-                const parts = point.split(':');
+                const parts = point.split(":");
                 if (parts.length > 1) {
                   return (
                     <li key={idx} className="result-item">
                       <span className="item-label">{parts[0].trim()}</span>
-                      <span className="item-content">{parts.slice(1).join(':').trim()}</span>
+                      <span className="item-content">{parts.slice(1).join(":").trim()}</span>
                     </li>
-
                   );
                 }
                 return (
@@ -212,8 +273,10 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="project-footer">
         <div className="footer-top">
           <div className="tech-tags">
-            {project.techStack.map(tech => (
-              <span key={tech} className="tech-tag">{tech}</span>
+            {project.techStack.map((tech) => (
+              <span key={tech} className="tech-tag">
+                {tech}
+              </span>
             ))}
           </div>
 
@@ -225,7 +288,7 @@ function ProjectCard({ project }: { project: Project }) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`project-link-btn ${link.label.toLowerCase().includes('github') ? 'github' : 'primary'}`}
+                  className={`project-link-btn ${link.label.toLowerCase().includes("github") ? "github" : "primary"}`}
                 >
                   {link.label}
                 </a>
@@ -238,26 +301,20 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="footer-extra">
             {project.achievement && (
               <div className="achievement-section">
-                {project.achievement.split(',').map((item, idx) => (
+                {project.achievement.split(",").map((item, idx) => (
                   <span key={idx} className="achievement-tag">
                     🏆 {item.trim()}
                   </span>
                 ))}
               </div>
             )}
-            {project.review && (
-              <div className="review-box">
-                {project.review}
-              </div>
-            )}
+            {project.review && <div className="review-box">{project.review}</div>}
           </div>
         )}
       </div>
-
     </div>
   );
 }
-
 
 function App() {
   return (
@@ -266,53 +323,94 @@ function App() {
       <main>
         <Hero />
 
-        <section id="research" className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.0rem', color: 'var(--primary)' }}>Research</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem' }}>국가연구과제 수행 및 학술 활동 성과입니다.</p>
-          <div className="project-list" style={{ marginBottom: '6rem' }}>
-            {projects.filter(p => p.id === 1).map(project => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </section>
-
-        <section id="projects" className="container">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.0rem', color: 'var(--primary)' }}>Team Projects</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '2.5rem' }}>다양한 협업을 통해 해결한 기술적 도전들입니다.</p>
-          <div className="project-list">
+        <section id="featured" className="container">
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "1.0rem", color: "var(--primary)" }}>Featured Work</h2>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "2.5rem" }}>가장 역량을 잘 보여줄 수 있는 대표 프로젝트들입니다.</p>
+          <div className="project-list" style={{ marginBottom: "6rem" }}>
             {projects
-              .filter(p => p.id !== 1)
-              .sort((a, b) => {
-                const dateA = a.period.split(" - ")[0];
-                const dateB = b.period.split(" - ")[0];
-                return dateB.localeCompare(dateA);
-              })
-              .map(project => (
+              .filter((p) => p.isFeatured)
+              .map((project) => (
                 <ProjectCard key={project.id} project={project} />
               ))}
           </div>
         </section>
 
-        <section id="experience" className="container" style={{ borderTop: '1px solid var(--border)', marginTop: '4rem' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--primary)' }}>Experience</h2>
-          <div style={{ padding: '2rem', background: '#fff', borderRadius: '8px', border: '1px solid var(--border)' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Graduate Research Assistant @ Network Lab</h3>
-            <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>2023 - Present</p>
-            <p>네트워크 보안 및 고성능 패킷 처리 시스템 연구. 다수의 국내외 학술 대회 발표 및 논문 게재.</p>
+        <section id="team" className="container">
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "1.0rem", color: "var(--primary)" }}>Team Projects</h2>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "2.5rem" }}>협업 기반 팀프로젝트 활동 결과입니다</p>
+          <div className="project-list" style={{ marginBottom: "6rem" }}>
+            {projects
+              .filter((p) => p.category === "team")
+              .sort((a, b) => {
+                const dateA = a.period.split(" - ")[0];
+                const dateB = b.period.split(" - ")[0];
+                return dateB.localeCompare(dateA);
+              })
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
           </div>
         </section>
 
-        <section id="contact" className="container" style={{ textAlign: 'center', padding: 'var(--spacing-xl) 0' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem' }}>Ready for the Next Challenge.</h2>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '3.5rem', maxWidth: '600px', margin: '0 auto 3.5rem' }}>
+        <section id="personal" className="container">
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "1.0rem", color: "var(--primary)" }}>Personal Projects</h2>
+          <p style={{ color: "var(--text-secondary)", marginBottom: "2.5rem" }}>개인적인 기술 탐구와 성취가 담긴 프로젝트들입니다</p>
+          <div className="project-list">
+            {projects
+              .filter((p) => p.category === "personal")
+              .sort((a, b) => {
+                const dateA = a.period.split(" - ")[0];
+                const dateB = b.period.split(" - ")[0];
+                return dateB.localeCompare(dateA);
+              })
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+          </div>
+        </section>
+
+        <section id="experience" className="container" style={{ borderTop: "1px solid var(--border)", marginTop: "4rem" }}>
+          <h2 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "var(--primary)" }}>Experience</h2>
+          <div className="experience-item" style={{ padding: "2rem", background: "#fff", borderRadius: "12px", border: "1px solid var(--border)", marginBottom: "1.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+              <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)" }}>Graduate Research Assistant @ Network Lab</h3>
+              <span style={{ color: "var(--text-secondary)", fontWeight: "500" }}>2024.03 - 2026.02</span>
+            </div>
+            <p style={{ color: "var(--text-secondary)", marginBottom: "1rem" }}>Master's Degree Candidate</p>
+            <p>프로그래머블 네트워크(P4, SmartNIC) 도메인에 최적화된 LLM 기반 네트워크 설정 자동화 및 고성능 패킷 처리 시스템 연구 수행</p>
+          </div>
+
+          <div className="experience-item" style={{ padding: "2rem", background: "#f8f9fa", borderRadius: "12px", border: "1px solid var(--border)" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+              <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)" }}>Undergraduate Researcher @ Network Lab</h3>
+              <span style={{ color: "var(--text-secondary)", fontWeight: "500" }}>2023.07 - 2024.02</span>
+            </div>
+            <p style={{ color: "var(--text-secondary)", marginBottom: "1rem" }}>Internship</p>
+            <p>네트워크 기초 연구 및 실험 환경 구축 지원. P4 언어 기반 기초 패킷 포워딩 로직 연구 참여.</p>
+          </div>
+        </section>
+
+        <section id="contact" className="container" style={{ textAlign: "center", padding: "var(--spacing-xl) 0" }}>
+          <h2 style={{ fontSize: "3rem", marginBottom: "1.5rem" }}>Ready for the Next Challenge.</h2>
+          <p
+            style={{
+              fontSize: "1.25rem",
+              color: "var(--text-secondary)",
+              marginBottom: "3.5rem",
+              maxWidth: "600px",
+              margin: "0 auto 3.5rem",
+            }}
+          >
             I am currently looking for opportunities where I can apply my skills in secure system design and performant data processing.
           </p>
-          <a href="mailto:contact@example.com" className="btn">Get In Touch</a>
+          <a href="mailto:tech.yuje@gmail.com" className="btn">
+            tech.yuje@gmail.com
+          </a>
         </section>
       </main>
 
-      <footer style={{ padding: '2rem 0', textAlign: 'center', borderTop: '1px solid var(--border)', color: 'var(--text-secondary)' }}>
-        <p>© 2024 YJ TAK. All rights reserved.</p>
+      <footer style={{ padding: "2rem 0", textAlign: "center", borderTop: "1px solid var(--border)", color: "var(--text-secondary)" }}>
+        <p>© 2026 YJ TAK. All rights reserved.</p>
       </footer>
     </div>
   );
