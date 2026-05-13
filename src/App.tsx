@@ -150,15 +150,15 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: "RNN 기반 경기도 상권매출 예측 AI 서비스",
+    title: "BiLSTM 기반 경기도 상권매출 예측 AI 서비스",
     period: "2026. 04. 04 - 2026. 04. 09",
     role: "DL Engineer",
     techStack: ["Python", "RNN", "LSTM", "BiLSTM", "GRU", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "Streamlit"],
     description: "자영업자들을 위한 경기도 상권매출 예측 웹 서비스 구현",
     highlights: [
-      "시계열 모델 학습 및 RNN 하이퍼파라미터 최적화",
+      "시계열 모델 학습 및 BiLSTM 하이퍼파라미터 최적화",
       "주기성을 갖는 월(month) 속성 Cyclic Encoding 적용",
-      "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델 선정",
+      "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델(BiLSTM) 선정",
     ],
     imageUrl: "https://drive.google.com/file/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3/view?usp=sharing",
     videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/preview",
