@@ -1,6 +1,7 @@
 import "./App.css";
 import architectureP4rag from "./assets/architecture-p4rag.png";
 import architectureStocklab from "./assets/architecture-stocklab.png";
+import lockerImage from "./assets/locker-image.png";
 
 interface Project {
   id: number;
@@ -36,7 +37,7 @@ const projects: Project[] = [
       "대규모 언어 모델이 네트워크 도메인 특화 언어 P4에 대한 지식이 적거나 최신 문법 코드 생성 품질이 낮다는 점에 기인하여, RAG를 활용하여 P4_16 버전의 코드 템플릿을 생성하는 시스템을 구축하였다 ",
     imageUrl: architectureP4rag,
     isTeam: 1,
-    achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 게재 예정(심사완료)",
+    achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 5월 게재 예정",
     links: [{ label: "포스터 논문", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318586" }],
     category: "research",
     isFeatured: true,
@@ -54,8 +55,9 @@ const projects: Project[] = [
       "관리자 페이지 풀스택 개발 - JWT 토큰 기반 권한 확인, 사용자 데이터 집계, 토큰 TTL 확인 후 상태 표시",
     ],
     description:
-      "KIS API 연동(Redis 토큰 관리), 종목 검색 및 현재가 REST API, 실시간 시세 WebSocket 수신 및 Redis 캐싱, 관리자 대시보드 풀스택 개발",
+      "한국투자증권(KIS) API 연동, 종목 검색 및 현재가 REST API, 실시간 시세 WebSocket 수신 및 Redis 캐싱, 관리자 대시보드 풀스택 개발",
     imageUrl: architectureStocklab,
+    videoUrl: "https://drive.google.com/file/d/12bjb25smulFk0pToGRW_bGzWJmy8Kb5g/preview",
     isTeam: 6,
     review:
       "예외 처리의 중요성을 알게 되었습니다. 처음에는 API 응답값이 당연히 정상적으로 들어올 것이라 가정하였으나, \
@@ -71,7 +73,7 @@ const projects: Project[] = [
     id: 3,
     title: "네모의 꿈 - 과사물함 대여 서비스",
     period: "2023.06 - 2023.08(웹서비스 개발), 2023.11 - 2023.12(쿠버네티스 배포)",
-    role: "프로젝트 리더 (PL), Full-stac",
+    role: "프로젝트 리더 (PL), Full-stack",
     techStack: ["React", "Recoil", "Node.js", "Express", "MySQL", "Docker", "AWS EC2", "AWS RDS", "Kubernetes", "GKE"],
     highlights: [
       "Full-Stack: 사물함 생성·조회·대여·반납 전체 플로우를 React(Recoil) + Express REST API로 풀스택 개발",
@@ -79,11 +81,13 @@ const projects: Project[] = [
       "K8s: GKE 기반 프론트엔드 Kubernetes 배포 — Deployment, LoadBalancer Service, ConfigMap으로 환경변수 관리",
     ],
     description: "학생회의 엑셀 기반 사물함 관리를 웹 서비스로 전환한 프로젝트.",
-    imageUrl: "https://storage.googleapis.com/uxpilot-auth.appspot.com/5f778d1217-063fddd80026e6f1f44d.png",
-    videoUrl: "https://drive.google.com/file/d/1aCIvmrIYaSELHxPKExo7DfUVaRkCf0s3/preview",
+    imageUrl: lockerImage,
     isTeam: 3,
     achievement: "2023 성신여자대학교 소프트웨어경진대회 금상 수상, 2023 클라우드컴퓨팅 A+ 학점 취득",
-    links: [{ label: "GitHub", url: "https://github.com/cl0ud4" }],
+    links: [
+      { label: "GitHub", url: "https://github.com/cl0ud4" },
+      { label: "보고서", url: "https://drive.google.com/file/d/1HSRrzWgYqQ97IpBODIyCgSPapB0OLk4w/view?usp=sharing" }
+    ],
     category: "team",
   },
   {
@@ -103,46 +107,46 @@ const projects: Project[] = [
     isTeam: 5,
     achievement: "2023 서버시스템 구축실습 A+ 학점 취득",
     links: [
+      { label: "프로젝트 보고서", url: "https://drive.google.com/file/d/1gw25uzH57JO2R9mc7Ru3MwAudj7QUeof/view?usp=sharing" },
       { label: "GitHub", url: "https://github.com/SungshinMine09/sungshin-mine-09?tab=readme-ov-file" },
-      { label: "프로젝트 보고서", url: "https://docs.google.com/document/d/1hPW3Lu_mcUo-SwI0rRQvvo2v7UJczQ8OOJbo9Rlear0/edit?usp=sharing" },
       { label: "Notion", url: "https://www.notion.so/9b143de9312b485db13055ae2a097927?pvs=25" },
     ],
     category: "team",
   },
   {
     id: 5,
-    title: "개인 프로젝트 #1 - [신용점수 예측 플랫폼]",
+    title: "DNN 기반 신용점수 예측 및 RAG 챗봇 서비스",
     period: "2026. 04. 13 - 2026. 04. 17 (4일) ",
     role: "DL / RAG Engineering",
-    techStack: ["Python", "DNN", "XGBoost", "RAG", "MLflow", "SMOGN", "Gradio", "HuggingFace"],
+    techStack: ["Python", "DNN", "XGBoost", "RAG", "MLflow", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "SMOGN", "Gradio", "HuggingFace"],
     description: "신용관리 진입장벽을 낮추고자, 입력값에 따라 신용점수를 예측하는 딥러닝 모델 개발 및 예측 결과 상담 RAG 챗봇 웹 서비스 구현",
     highlights: [
       "DNN 하이퍼파라미터 최적화 및 XGBoost와 성능 비교",
       "Feature Engineering으로 데이터 편향 개선",
       "딥러닝 데이터셋(AIHub 금융 합성 데이터), RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용"],
     imageUrl: "https://drive.google.com/file/d/1QXnBx6xIH12GIwK8bRNNtWBEICq19A19/view?usp=sharing",
-    videoUrl: "https://drive.google.com/file/d/11u1rULYc-r8U9QiWAsTWvnvXOvqhSUwl/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/11u1rULYc-r8U9QiWAsTWvnvXOvqhSUwl/preview",
     category: "personal",
     links: [
-      { label: "보고서", url: "https://drive.google.com/file/d/1K_-9yepnzzGjPctqOBehYIiK-txTgkAh/view?usp=drive_link" },
+      { label: "보고서", url: "https://drive.google.com/file/d/1K_-9yepnzzGjPctqOBehYIiK-txTgkAh/view?usp=sharing" },
       { label: "서비스", url: "https://huggingface.co/spaces/dev-yuje/gardio_test" },
     ],
     isFeatured: true,
   },
   {
     id: 6,
-    title: "개인 프로젝트 #2 - [경기도 상권매출 예측]",
+    title: "RNN 기반 경기도 상권매출 예측 AI 서비스",
     period: "2026. 04. 04 - 2026. 04. 09 (5일)",
     role: "DL Engineer",
-    techStack: ["Python", "RNN", "LSTM", "BiLSTM", "GRU", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "Keras", "Streamlit"],
-    description: "이자영업자들을 위한 경기도 상권매출 예측 웹 서비스 구현",
+    techStack: ["Python", "RNN", "LSTM", "BiLSTM", "GRU", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "Streamlit"],
+    description: "자영업자들을 위한 경기도 상권매출 예측 웹 서비스 구현",
     highlights: [
       "시계열 모델 학습 및 RNN 하이퍼파라미터 최적화",
       "주기성을 갖는 월(month) 속성 Cyclic Encoding 적용",
       "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델 선정"
     ],
     imageUrl: "https://drive.google.com/file/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3/view?usp=sharing",
-    videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/preview",
     category: "personal",
     links: [
       { label: "보고서", url: "https://drive.google.com/file/d/16Ama5qcEKbUMKesOf8gD9unqgY2r2vhG/view?usp=sharing" },
@@ -151,7 +155,7 @@ const projects: Project[] = [
   },
   {
     id: 7,
-    title: "개인 프로젝트 #3 - [투자 성향 예측]",
+    title: "Random Forest 분류 모델 기반 투자 성향 예측 AI 서비스",
     period: "2026. 03. 30 - 2026. 04. 03 (4일)",
     role: "ML Engineer",
     techStack: ["Python", "Decision Tree", "Random Forest Classifier", "XGBClassifier", "KNN", "SVM", "Pandas", "Numpy", "Scikit-learn"],
@@ -162,7 +166,7 @@ const projects: Project[] = [
     ],
     description: "투자 성향 다각화에 따른 분석 어려움 문제를 해결하기 위한, AI 기반 투자 성향 분류 모델 구현",
     imageUrl: "https://drive.google.com/file/d/1dquXj4nTthVGMSfJHIeibkjOlJjclQMf/view?usp=sharing",
-    videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/view?usp=sharing",
+    videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/preview",
     links: [
       { label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" },
     ],
@@ -199,19 +203,19 @@ function Hero() {
     <section id="home" className="hero container">
       <div className="badge fade-in">
         <span className="badge-dot"></span>
-        Available for Financial Tech Roles
+        금융 IT 분야 채용 가능
       </div>
       <h1 className="hero-title fade-in" style={{ animationDelay: "0.2s" }}>
-        Full-Stack & AI Developer
-        <br /> for Future Finance
+        미래 금융을 위한
+        <br /> Full-Stack & AI 개발자
       </h1>
       <p className="hero-subtitle fade-in" style={{ animationDelay: "0.4s" }}>
-        Result-driven developer focusing on performance, security, and scalability in financial systems. Experienced in building
-        high-frequency data pipelines and secure banking infrastructures.
+        금융 시스템의 데이터 무결성, 신뢰성, 성능에 집중하는 성과 중심 개발자입니다.
+        대규모 데이터 파이프라인 구축과 안전한 금융 인프라 설계 경험을 보유하고 있습니다.
       </p>
       <div className="fade-in" style={{ animationDelay: "0.6s" }}>
-        <a href="#projects" className="btn">
-          Explore Projects
+        <a href="#featured" className="btn">
+          프로젝트 둘러보기
         </a>
       </div>
     </section>
@@ -221,94 +225,80 @@ function Hero() {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="project-card fade-in">
-      <div className="project-header">
-        <div className="header-left">
-          <div className="role-badge">{project.role}</div>
-          <h3 className="project-title">{project.title}</h3>
-        </div>
-        <div className="header-right">
-          <div className="project-period">{project.period}</div>
-          {project.isTeam && project.isTeam > 1 && <div className="team-info">팀 프로젝트 ({project.isTeam}인)</div>}
-        </div>
+      <div className="project-media">
+        {project.videoUrl ? (
+          <div className="video-container">
+            <iframe
+              src={project.videoUrl}
+              width="100%"
+              height="100%"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              title={project.title}
+              style={{ border: "none" }}
+            ></iframe>
+          </div>
+        ) : (
+          <img src={project.imageUrl} alt={project.title} />
+        )}
       </div>
 
-      <div className="project-content">
-        <div className="project-media">
-          {project.videoUrl ? (
-            <div className="video-container">
-              <iframe src={project.videoUrl} width="100%" height="100%" allow="autoplay" title={project.title}></iframe>
-            </div>
-          ) : (
-            <img src={project.imageUrl} alt={project.title} />
-          )}
-        </div>
-
-        <div className="project-details">
-          <p className="project-description">{project.description}</p>
-
-          <div className="results-section">
-            <h4 className="section-title">Key Highlights</h4>
-            <ul className="results-list">
-              {project.highlights.map((point, idx) => {
-                const parts = point.split(":");
-                if (parts.length > 1) {
-                  return (
-                    <li key={idx} className="result-item">
-                      <span className="item-label">{parts[0].trim()}</span>
-                      <span className="item-content">{parts.slice(1).join(":").trim()}</span>
-                    </li>
-                  );
-                }
-                return (
-                  <li key={idx} className="result-item simple">
-                    {point}
-                  </li>
-                );
-              })}
-            </ul>
+      <div className="project-info">
+        <div className="project-meta">
+          <div className="role-badge">{project.role}</div>
+          <div className="project-period">
+            {project.period}
+            {project.isTeam && project.isTeam > 1 && ` • 팀 (${project.isTeam}인)`}
           </div>
         </div>
-      </div>
 
-      <div className="project-footer">
-        <div className="footer-top">
-          <div className="tech-tags">
-            {project.techStack.map((tech) => (
-              <span key={tech} className="tech-tag">
-                {tech}
-              </span>
+        <h3 className="project-title">{project.title}</h3>
+        <p className="project-description">{project.description}</p>
+
+        <div className="results-section">
+          <h4 className="section-title">Key Highlights</h4>
+          <div className="results-list">
+            {project.highlights.map((point, idx) => (
+              <div key={idx} className="result-item simple">
+                {point.includes(":") ? point.split(":")[1].trim() : point}
+              </div>
             ))}
           </div>
-
-          {project.links && (
-            <div className="project-links">
-              {project.links.map((link, idx) => (
-                <a
-                  key={idx}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`project-link-btn ${link.label.toLowerCase().includes("github") ? "github" : "primary"}`}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
         </div>
 
-        {(project.achievement || project.review) && (
+        <div className="tech-tags">
+          {project.techStack.map((tech) => (
+            <span key={tech} className="tech-tag">
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        {project.links && (
+          <div className="project-actions">
+            {project.links.map((link, idx) => (
+              <a
+                key={idx}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`project-link-btn ${link.label.toLowerCase().includes("github") ? "github" : "primary"}`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
+
+        {project.achievement && (
           <div className="footer-extra">
-            {project.achievement && (
-              <div className="achievement-section">
-                {project.achievement.split(",").map((item, idx) => (
-                  <span key={idx} className="achievement-tag">
-                    🏆 {item.trim()}
-                  </span>
-                ))}
-              </div>
-            )}
-            {project.review && <div className="review-box">{project.review}</div>}
+            <div className="achievement-section">
+              {project.achievement.split(",").map((item, idx) => (
+                <span key={idx} className="achievement-tag">
+                  🏆 {item.trim()}
+                </span>
+              ))}
+            </div>
           </div>
         )}
       </div>
