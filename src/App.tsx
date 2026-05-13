@@ -86,7 +86,7 @@ const projects: Project[] = [
     achievement: "2023 성신여자대학교 소프트웨어경진대회 금상 수상, 2023 클라우드컴퓨팅 A+ 학점 취득",
     links: [
       { label: "GitHub", url: "https://github.com/cl0ud4" },
-      { label: "보고서", url: "https://drive.google.com/file/d/1HSRrzWgYqQ97IpBODIyCgSPapB0OLk4w/view?usp=sharing" }
+      { label: "보고서", url: "https://drive.google.com/file/d/1HSRrzWgYqQ97IpBODIyCgSPapB0OLk4w/view?usp=sharing" },
     ],
     category: "team",
   },
@@ -116,14 +116,29 @@ const projects: Project[] = [
   {
     id: 5,
     title: "DNN 기반 신용점수 예측 및 RAG 챗봇 서비스",
-    period: "2026. 04. 13 - 2026. 04. 17 (4일) ",
+    period: "2026. 04. 13 - 2026. 04. 17",
     role: "DL / RAG Engineering",
-    techStack: ["Python", "DNN", "XGBoost", "RAG", "MLflow", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "SMOGN", "Gradio", "HuggingFace"],
-    description: "신용관리 진입장벽을 낮추고자, 입력값에 따라 신용점수를 예측하는 딥러닝 모델 개발 및 예측 결과 상담 RAG 챗봇 웹 서비스 구현",
+    techStack: [
+      "Python",
+      "DNN",
+      "XGBoost",
+      "RAG",
+      "MLflow",
+      "Pandas",
+      "Numpy",
+      "Scikit-learn",
+      "Tensorflow",
+      "SMOGN",
+      "Gradio",
+      "HuggingFace",
+    ],
+    description:
+      "신용관리 진입장벽을 낮추고자, 입력값에 따라 신용점수를 예측하는 딥러닝 모델 개발 및 예측 결과 상담 RAG 챗봇 웹 서비스 구현",
     highlights: [
       "DNN 하이퍼파라미터 최적화 및 XGBoost와 성능 비교",
       "Feature Engineering으로 데이터 편향 개선",
-      "딥러닝 데이터셋(AIHub 금융 합성 데이터), RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용"],
+      "딥러닝 데이터셋(AIHub 금융 합성 데이터), RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용",
+    ],
     imageUrl: "https://drive.google.com/file/d/1QXnBx6xIH12GIwK8bRNNtWBEICq19A19/view?usp=sharing",
     videoUrl: "https://drive.google.com/file/d/11u1rULYc-r8U9QiWAsTWvnvXOvqhSUwl/preview",
     category: "personal",
@@ -136,14 +151,14 @@ const projects: Project[] = [
   {
     id: 6,
     title: "RNN 기반 경기도 상권매출 예측 AI 서비스",
-    period: "2026. 04. 04 - 2026. 04. 09 (5일)",
+    period: "2026. 04. 04 - 2026. 04. 09",
     role: "DL Engineer",
     techStack: ["Python", "RNN", "LSTM", "BiLSTM", "GRU", "Pandas", "Numpy", "Scikit-learn", "Tensorflow", "Streamlit"],
     description: "자영업자들을 위한 경기도 상권매출 예측 웹 서비스 구현",
     highlights: [
       "시계열 모델 학습 및 RNN 하이퍼파라미터 최적화",
       "주기성을 갖는 월(month) 속성 Cyclic Encoding 적용",
-      "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델 선정"
+      "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델 선정",
     ],
     imageUrl: "https://drive.google.com/file/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3/view?usp=sharing",
     videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/preview",
@@ -156,20 +171,18 @@ const projects: Project[] = [
   {
     id: 7,
     title: "Random Forest 분류 모델 기반 투자 성향 예측 AI 서비스",
-    period: "2026. 03. 30 - 2026. 04. 03 (4일)",
+    period: "2026. 03. 30 - 2026. 04. 03",
     role: "ML Engineer",
     techStack: ["Python", "Decision Tree", "Random Forest Classifier", "XGBClassifier", "KNN", "SVM", "Pandas", "Numpy", "Scikit-learn"],
     highlights: [
       "자연어 기반 투자 성향 카테고리를 인코딩하여 Permutation Importance 추출",
       "정확도 평가 결과: Random Forest Classifier(79%), Decision Tree(77%),XGBClassifier(77%), KNN(77%), SVM(72%)",
-      "Kaggle Finance_trends 2020-2025 데이터셋 활용(인도개인투자자 12,000명 설문조사)"
+      "Kaggle Finance_trends 2020-2025 데이터셋 활용(인도개인투자자 12,000명 설문조사)",
     ],
     description: "투자 성향 다각화에 따른 분석 어려움 문제를 해결하기 위한, AI 기반 투자 성향 분류 모델 구현",
     imageUrl: "https://drive.google.com/file/d/1dquXj4nTthVGMSfJHIeibkjOlJjclQMf/view?usp=sharing",
     videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/preview",
-    links: [
-      { label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" },
-    ],
+    links: [{ label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" }],
     category: "personal",
   },
 ];
@@ -210,8 +223,8 @@ function Hero() {
         <br /> Full-Stack & AI 개발자
       </h1>
       <p className="hero-subtitle fade-in" style={{ animationDelay: "0.4s" }}>
-        금융 시스템의 데이터 무결성, 신뢰성, 성능에 집중하는 성과 중심 개발자입니다.
-        대규모 데이터 파이프라인 구축과 안전한 금융 인프라 설계 경험을 보유하고 있습니다.
+        금융 시스템의 데이터 무결성, 신뢰성, 성능에 집중하는 성과 중심 개발자입니다. 대규모 데이터 파이프라인 구축과 안전한 금융 인프라 설계
+        경험을 보유하고 있습니다.
       </p>
       <div className="fade-in" style={{ animationDelay: "0.6s" }}>
         <a href="#featured" className="btn">
@@ -361,7 +374,10 @@ function App() {
 
         <section id="experience" className="container" style={{ borderTop: "1px solid var(--border)", marginTop: "4rem" }}>
           <h2 style={{ fontSize: "2.5rem", marginBottom: "2rem", color: "var(--primary)" }}>Experience</h2>
-          <div className="experience-item" style={{ padding: "2rem", background: "#fff", borderRadius: "12px", border: "1px solid var(--border)", marginBottom: "1.5rem" }}>
+          <div
+            className="experience-item"
+            style={{ padding: "2rem", background: "#fff", borderRadius: "12px", border: "1px solid var(--border)", marginBottom: "1.5rem" }}
+          >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
               <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)" }}>Graduate Research Assistant @ Network Lab</h3>
               <span style={{ color: "var(--text-secondary)", fontWeight: "500" }}>2024.03 - 2026.02</span>
@@ -370,7 +386,10 @@ function App() {
             <p>프로그래머블 네트워크(P4, SmartNIC) 도메인에 최적화된 LLM 기반 네트워크 설정 자동화 및 고성능 패킷 처리 시스템 연구 수행</p>
           </div>
 
-          <div className="experience-item" style={{ padding: "2rem", background: "#f8f9fa", borderRadius: "12px", border: "1px solid var(--border)" }}>
+          <div
+            className="experience-item"
+            style={{ padding: "2rem", background: "#f8f9fa", borderRadius: "12px", border: "1px solid var(--border)" }}
+          >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
               <h3 style={{ fontSize: "1.5rem", color: "var(--text-primary)" }}>Undergraduate Researcher @ Network Lab</h3>
               <span style={{ color: "var(--text-secondary)", fontWeight: "500" }}>2023.07 - 2024.02</span>
