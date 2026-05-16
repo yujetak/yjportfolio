@@ -76,8 +76,8 @@ const projects: Project[] = [
     role: "프로젝트 리더 (PL), Full-stack",
     techStack: ["React", "Recoil", "Node.js", "Express", "MySQL", "Docker", "AWS EC2", "AWS RDS", "Kubernetes", "GKE"],
     highlights: [
-      "Full-Stack: 사물함 생성·조회·대여·반납 전체 플로우를 React(Recoil) + Express REST API로 풀스택 개발",
-      "Cloud: AWS EC2/RDS/Load Balancer/Route 53으로 백엔드 배포, HTTPS Mixed Content 문제 해결",
+      "Full-Stack: 사물함 생성·조회·대여·반납 전체 플로우를 React + Express REST API로 풀스택 개발",
+      "Cloud: AWS EC2/RDS/Load Balancer/Route 53으로 백엔드 배포, HTTP/HTTPS 충돌 문제 해결",
       "K8s: GKE 기반 프론트엔드 Kubernetes 배포 — Deployment, LoadBalancer Service, ConfigMap으로 환경변수 관리",
     ],
     description: "학생회의 엑셀 기반 사물함 관리를 웹 서비스로 전환한 프로젝트.",
@@ -98,7 +98,7 @@ const projects: Project[] = [
     techStack: ["EJS", "CSS", "Node.js", "Express", "MySQL", "Sequelize", "Socket.io", "JWT", "GCP"],
     highlights: [
       "Full-Stack: 공동구매방 생성부터 입금폼 제작·작성·제출·계좌 확인·결과 통계까지 전체 플로우 풀스택 개발",
-      "DB Design: 입금폼–문항–답변자–답변의 1:N:N:N 약한 개체 관계를 DB 재설계로 해결(1:N)",
+      "DB Design: 입금폼–문항–답변자–답변의 1:N:N:N 관계를 속성 타입 변경으로 1:N으로 최적화",
       "Documentation: 회의록·노션·보고서 등 팀 협업 문서화 총괄 담당",
     ],
     description: "여러 플랫폼에 분산된 대학 공동구매 절차를 하나의 웹 서비스로 통합한 프로젝트. GCP VM 인스턴스 분리 배포.",
@@ -216,15 +216,14 @@ function Hero() {
     <section id="home" className="hero container">
       <div className="badge fade-in">
         <span className="badge-dot"></span>
-        금융 IT 분야 채용 가능
+        AI IT 분야 채용 가능
       </div>
       <h1 className="hero-title fade-in" style={{ animationDelay: "0.2s" }}>
-        미래 금융을 위한
-        <br /> Full-Stack & AI 개발자
+        SW로 길을 찾고
+        <br /> AI로 시야를 넓히다
       </h1>
       <p className="hero-subtitle fade-in" style={{ animationDelay: "0.4s" }}>
-        금융 시스템의 데이터 무결성, 신뢰성, 성능에 집중하는 성과 중심 개발자입니다. 대규모 데이터 파이프라인 구축과 안전한 금융 인프라 설계
-        경험을 보유하고 있습니다.
+        컴퓨터공학과 네트워크 연구를 기반으로 AI 서비스 개발까지 확장한 융합형 엔지니어입니다. 제약 속에서도 끝까지 결과로 증명하는 개발자를 지향합니다.
       </p>
       <div className="fade-in" style={{ animationDelay: "0.6s" }}>
         <a href="#featured" className="btn">
@@ -410,7 +409,7 @@ function App() {
               margin: "0 auto 3.5rem",
             }}
           >
-            I am currently looking for opportunities where I can apply my skills in secure system design and performant data processing.
+            SW 엔지니어링의 기본기 위에 AI 기술을 녹여낼 줄 아는 융합형 엔지니어로, 실제 비즈니스 환경에서 견고하게 작동하는 시스템을 만들 기회를 찾고 있습니다.
           </p>
           <a href="mailto:tech.yuje@gmail.com" className="btn">
             tech.yuje@gmail.com
