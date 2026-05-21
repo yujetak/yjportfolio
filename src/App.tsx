@@ -2,6 +2,7 @@ import "./App.css";
 import architectureP4rag from "./assets/architecture-p4rag.png";
 import architectureStocklab from "./assets/architecture-stocklab.png";
 import lockerImage from "./assets/locker-image.png";
+import neo4jAuraDB from "./assets/neo4j-auraDB.png";
 
 interface Project {
   id: number;
@@ -184,6 +185,29 @@ const projects: Project[] = [
     videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/preview",
     links: [{ label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" }],
     category: "personal",
+  },
+  {
+    id: 8,
+    title: "FinGraph / GraphRAG 기반 뉴스 질의응답 챗봇",
+    period: "2026. 05. 18 - 2026. 05. 20",
+    role: "AI / GraphRAG Engineer",
+    techStack: ["Python", "GraphRAG", "Neo4j", "Cypher", "ToolsRetriever", "LangGraph", "LangChain", "Selenium", "Docker", "OpenAI API", "HuggingFace", "Gradio"],
+    highlights: [
+      "Neo4j ToolsRetriever를 통해 VectorCypher(의미 기반)와 Text2Cypher(구조적 집계)를 결합한 하이브리드 검색 구현",
+      "Selenium 기반 네이버 뉴스 동적 크롤링부터 GPT-4o를 활용한 지식 그래프(Entity/Relation) 추출 및 Neo4j Aura DB 적재까지 전 과정 파이프라인 자동화",
+      "Harness Engineering 및 Pre-commit Hook(Ruff, MyPy) 도입으로 AI 기반 코드 구현의 무결성 확보",
+    ],
+    description: "뉴스 기사에서 기업, 기술 등의 엔티티와 관계를 추출해 지식 그래프를 구축하고, Multi-hop 추론 및 하이브리드 검색으로 맥락 있는 답변을 제공하는 챗봇 서비스",
+    imageUrl: neo4jAuraDB,
+    videoUrl: "https://drive.google.com/file/d/1h1GffW--dmUVMNLcgEXi_J3s3K_ZXIQC/preview",
+    review: "Harness Engineering을 통해 개발 가이드라인과 금지 규칙을 정의하여 AI 에이전트 기반 개발의 병목을 최소화했습니다. 또한, Pre-commit Hook을 도입해 로컬에서 정적 타입 및 린트 검사를 강제함으로써 깃허브 액션에서의 무의미한 빌드 실패를 방지했습니다. 이 과정에서 GraphRAG의 구조적 설계뿐만 아니라, 시스템적 안전망(Guardrail)이 개발 생산성에 미치는 큰 영향을 체감했습니다.",
+    links: [
+      { label: "GitHub", url: "https://github.com/yujetak/FinGraph" },
+      { label: "서비스", url: "https://huggingface.co/spaces/dev-yuje/FinGraph" },
+      { label: "참고자료", url: "https://github.com/gongwon-nayeon/graphrag-tools-retriever" }
+    ],
+    category: "personal",
+    isFeatured: true,
   },
 ];
 
