@@ -208,7 +208,6 @@ const projects: Project[] = [
       { label: "참고자료", url: "https://github.com/gongwon-nayeon/graphrag-tools-retriever" }
     ],
     category: "personal",
-    isFeatured: true,
   },
 ];
 
@@ -369,8 +368,8 @@ function App() {
             {projects
               .filter((p) => p.category === "team")
               .sort((a, b) => {
-                const dateA = a.period.split(" - ")[0];
-                const dateB = b.period.split(" - ")[0];
+                const dateA = a.period.split(" - ")[0].replace(/\s+/g, "");
+                const dateB = b.period.split(" - ")[0].replace(/\s+/g, "");
                 return dateB.localeCompare(dateA);
               })
               .map((project) => (
@@ -386,8 +385,8 @@ function App() {
             {projects
               .filter((p) => p.category === "personal")
               .sort((a, b) => {
-                const dateA = a.period.split(" - ")[0];
-                const dateB = b.period.split(" - ")[0];
+                const dateA = a.period.split(" - ")[0].replace(/\s+/g, "");
+                const dateB = b.period.split(" - ")[0].replace(/\s+/g, "");
                 return dateB.localeCompare(dateA);
               })
               .map((project) => (

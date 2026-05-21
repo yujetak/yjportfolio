@@ -14,25 +14,25 @@
 
 ### Backend & AI / Data Engineering (주요 프로젝트 백그라운드)
 - **Languages & Frameworks**: Python, Node.js (Express), Flask, EJS
-- **Database / Cache**: MySQL, MariaDB, Redis, Neo4j (Graph Database)
-- **AI & RAG**: LangChain, LangGraph, GraphRAG, PyTorch, TensorFlow, HuggingFace, XGBoost
-- **DevOps & Cloud**: Docker, Kubernetes (GKE), AWS (EC2, RDS), GCP
+- **Database / Cache**: PostgreSQL, MySQL, MariaDB, FAISS, Neo4j (Graph Database), Redis
+- **AI & RAG**: LangChain, LangGraph, RAG, GraphRAG, PyTorch, TensorFlow, HuggingFace, XGBoost
+- **DevOps & Cloud**: Docker, Kubernetes (GKE, minikube), AWS (EC2, RDS), GCP
 
 ---
 
 ## 🚀 Key Projects (대표 프로젝트 요약)
 
-### 1. FinGraph / GraphRAG 기반 뉴스 질의응답 챗봇
-- **Role**: AI / GraphRAG 엔지니어링 (개인)
-- **Highlight**: Neo4j 기반 VectorCypher와 Text2Cypher를 결합한 하이브리드 검색 구현, GPT-4o를 이용한 엔티티-관계(KG) 자동 추출 및 전과정 파이프라인 자동화.
+### 1. 대규모 언어 모델 기반 네트워크 설정 자동화 시스템 (연구과제)
+- **Role**: NRF 석사과정생 연구장려금 지원사업 연구책임자 (PI)
+- **Highlight**: RAG 기술을 접목하여 특화 언어인 P4_16 코드 템플릿 생성 연구, **2025 KCC 우수발표논문상 수상** 및 정보과학회 논문 게재 예정.
 
 ### 2. StockLab - 실시간 시세 기반 모의투자 플랫폼
 - **Role**: 프로젝트 리더 (PL), 풀스택 개발 (6인)
 - **Highlight**: KIS API 연동 실시간 시세 수집 및 Redis 캐싱, APScheduler 기반 배치 프로세스 자동화, JWT 권한 검증이 도입된 모시 대시보드 어드민 페이지 풀스택 구현.
 
-### 3. 대규모 언어 모델 기반 네트워크 설정 자동화 시스템 (연구과제)
-- **Role**: NRF 석사과정생 연구장려금 지원사업 연구책임자 (PI)
-- **Highlight**: RAG 기술을 접목하여 특화 언어인 P4_16 코드 템플릿 생성 연구, **2025 KCC 우수발표논문상 수상** 및 정보과학회 논문 게재 예정.
+### 3. DNN 기반 신용점수 예측 및 RAG 챗봇 서비스
+- **Role**: DL / RAG Engineering (개인)
+- **Highlight**: DNN 하이퍼파라미터 최적화 및 XGBoost와 성능 비교, Feature Engineering으로 데이터 편향 개선, 딥러닝 데이터셋(AIHub 금융 합성 데이터) 및 RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용.
 
 ---
 
