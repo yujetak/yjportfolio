@@ -35,7 +35,7 @@ const projects: Project[] = [
       "연구개발목표: 검색증강생성(RAG) 기술을 활용하여, P4 언어 기반 네트워크 기능 설계 코드 템플릿을 생성한다",
     ],
     description:
-      "대규모 언어 모델이 네트워크 도메인 특화 언어 P4에 대한 지식이 적거나 최신 문법 코드 생성 품질이 낮다는 점에 기인하여, RAG를 활용하여 P4_16 버전의 코드 템플릿을 생성하는 시스템을 구축하였다 ",
+      "대규모 언어 모델이 네트워크 도메인 특화 언어 P4에 대한 지식이 적거나 최신 문법 코드 생성 품질이 낮다는 점에 기인하여, RAG를 활용하여 P4_16 버전의 코드 템플릿을 생성하는 시스템을 구축하였다.",
     imageUrl: architectureP4rag,
     isTeam: 1,
     achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 5월 게재 예정",
@@ -52,7 +52,7 @@ const projects: Project[] = [
     techStack: ["Python", "Flask", "MariaDB", "Redis", "Jinja2 + HTML", "KIS API", "Flask-Socket IO", "APScheduler"],
     highlights: [
       "한국투자증권(KIS) REST, Websocket API - 종목 정보·실시간 시세 수집 후 Mariadb 및 Redis 저장",
-      "APscheduler cron, interval 설정 - 토큰 자동발급, 장 종료 후 당일 시가·종가·최조가·최저가 수집 및 저장",
+      "APScheduler cron, interval 설정 - 토큰 자동발급, 장 종료 후 당일 시가·종가·최고가·최저가 수집 및 저장",
       "관리자 페이지 풀스택 개발 - JWT 토큰 기반 권한 확인, 사용자 데이터 집계, 토큰 TTL 확인 후 상태 표시",
     ],
     description:
@@ -140,7 +140,7 @@ const projects: Project[] = [
       "Feature Engineering으로 데이터 편향 개선",
       "딥러닝 데이터셋(AIHub 금융 합성 데이터), RAG 참조문서(KCB 개인신용평가체계 공시자료) 활용",
     ],
-    imageUrl: "https://drive.google.com/file/d/1QXnBx6xIH12GIwK8bRNNtWBEICq19A19/view?usp=sharing",
+    imageUrl: "https://lh3.googleusercontent.com/d/1QXnBx6xIH12GIwK8bRNNtWBEICq19A19",
     videoUrl: "https://drive.google.com/file/d/11u1rULYc-r8U9QiWAsTWvnvXOvqhSUwl/preview",
     category: "personal",
     links: [
@@ -161,7 +161,7 @@ const projects: Project[] = [
       "주기성을 갖는 월(month) 속성 Cyclic Encoding 적용",
       "RNN, LSTM, BiLSTM, GRU 성능 비교 및 최적 모델(BiLSTM) 선정",
     ],
-    imageUrl: "https://drive.google.com/file/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3/view?usp=sharing",
+    imageUrl: "https://lh3.googleusercontent.com/d/16nxkjC-2oCorcGDh9YzbQ60b_esNBnj3",
     videoUrl: "https://drive.google.com/file/d/15zsOwGYMBPIpZGjmiexjKhdo7Q27lhN6/preview",
     category: "personal",
     links: [
@@ -177,11 +177,11 @@ const projects: Project[] = [
     techStack: ["Python", "Decision Tree", "Random Forest Classifier", "XGBClassifier", "KNN", "SVM", "Pandas", "Numpy", "Scikit-learn"],
     highlights: [
       "자연어 기반 투자 성향 카테고리를 인코딩하여 Permutation Importance 추출",
-      "정확도 평가 결과: Random Forest Classifier(79%), Decision Tree(77%),XGBClassifier(77%), KNN(77%), SVM(72%)",
+      "정확도 평가 결과: Random Forest Classifier(79%), Decision Tree(77%), XGBClassifier(77%), KNN(77%), SVM(72%)",
       "Kaggle Finance_trends 2020-2025 데이터셋 활용(인도개인투자자 12,000명 설문조사)",
     ],
     description: "투자 성향 다각화에 따른 분석 어려움 문제를 해결하기 위한, AI 기반 투자 성향 분류 모델 구현",
-    imageUrl: "https://drive.google.com/file/d/1dquXj4nTthVGMSfJHIeibkjOlJjclQMf/view?usp=sharing",
+    imageUrl: "https://lh3.googleusercontent.com/d/1dquXj4nTthVGMSfJHIeibkjOlJjclQMf",
     videoUrl: "https://drive.google.com/file/d/1gfps8-CPCH22-qURooAjM1hNNZTUopAs/preview",
     links: [{ label: "보고서", url: "https://drive.google.com/file/d/1mBAxYd0IW4pGEPZu0hJWIXVUaXjDCBPk/view?usp=sharing" }],
     category: "personal",
@@ -203,6 +203,7 @@ const projects: Project[] = [
     review: "Harness Engineering을 통해 개발 가이드라인과 금지 규칙을 정의하여 AI 에이전트 기반 개발의 병목을 최소화했습니다. 또한, Pre-commit Hook을 도입해 로컬에서 정적 타입 및 린트 검사를 강제함으로써 깃허브 액션에서의 무의미한 빌드 실패를 방지했습니다. 이 과정에서 GraphRAG의 구조적 설계뿐만 아니라, 시스템적 안전망(Guardrail)이 개발 생산성에 미치는 큰 영향을 체감했습니다.",
     links: [
       { label: "GitHub", url: "https://github.com/yujetak/FinGraph" },
+      { label: "보고서", url: "https://drive.google.com/file/d/1OZ3eDOakx-wsGV8B5-pTKEaou_BlWaRh/view?usp=drive_link" },
       { label: "서비스", url: "https://huggingface.co/spaces/dev-yuje/FinGraph" },
       { label: "참고자료", url: "https://github.com/gongwon-nayeon/graphrag-tools-retriever" }
     ],
