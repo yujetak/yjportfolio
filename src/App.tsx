@@ -38,8 +38,11 @@ const projects: Project[] = [
       "대규모 언어 모델이 네트워크 도메인 특화 언어 P4에 대한 지식이 적거나 최신 문법 코드 생성 품질이 낮다는 점에 기인하여, RAG를 활용하여 P4_16 버전의 코드 템플릿을 생성하는 시스템을 구축하였다.",
     imageUrl: architectureP4rag,
     isTeam: 1,
-    achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 5월 게재 예정",
-    links: [{ label: "포스터 논문", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318586" }],
+    achievement: "2025 한국컴퓨터종합학술대회(KCC) 우수발표논문상 수상, 2026 정보과학회 컴퓨팅의 실제 논문지 5월 개제",
+    links: [
+      { label: "포스터 논문", url: "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE12318586" },
+      { label: "논문지", url: "https://www.kiise.or.kr/e_journal/2026/5/KTCP/06.pdf" },
+    ],
     category: "research",
     isFeatured: true,
   },
