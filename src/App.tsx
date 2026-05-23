@@ -70,7 +70,6 @@ const projects: Project[] = [
     디버깅 효율이 크게 달라진다는 것을 알게 되었습니다.",
     links: [{ label: "GitHub", url: "https://github.com/human13th2team/StockLab" }],
     category: "team",
-    isFeatured: true,
   },
 
   {
@@ -211,6 +210,44 @@ const projects: Project[] = [
       { label: "참고자료", url: "https://github.com/gongwon-nayeon/graphrag-tools-retriever" }
     ],
     category: "personal",
+  },
+  {
+    id: 9,
+    title: "Nexus - 올인원 창업지원 서비스",
+    period: "2026.03.27 - 2026.05.13",
+    role: "창업 시뮬레이션 기능 개발, 예측 모델 개발 및 인프라 배포",
+    techStack: [
+      "React",
+      "Next.js",
+      "Spring Boot",
+      "FastAPI",
+      "Python",
+      "Java",
+      "PostgreSQL",
+      "XGBoost",
+      "CatBoost",
+      "Docker",
+      "Kubernetes"
+    ],
+    highlights: [
+      "공공데이터 상업용 부동산 실거래가 API 기반 매매가 조회, 벡터 검색 기반 업종별 필수 설비 매핑",
+      "카카오지도 API·소상공인 365 API 기반 실시간 업소수 지도 영역 표시",
+      "XGBoost·CatBoost 기반 창업 성공 예측 모델 개발",
+      "Render(BE)·Huggingface(BE)·CloudType(Redis) 배포 및 WSL·Docker·Kubernetes 클라우드화"
+    ],
+    description:
+      "[AI 기반 창업 지원 플랫폼] 예비 창업자를 위해 '창업 시뮬레이션 - 브랜딩 - 행정 분석 - 매장 운영'의 전 과정을 AI가 가이드하는 웹 프로젝트입니다. 프론트엔드는 React, 백엔드는 Java 기반 Spring Boot와 Python 기반 FastAPI를 사용해 서버를 구축하고, Docker로 배포했습니다.",
+    imageUrl: "https://raw.githubusercontent.com/human13th2team/nexus/main/assets/Simulation.png",
+    videoUrl: "https://drive.google.com/file/d/10jzluNJcvNDLESfXqC8NdckSsfC1crrM/preview",
+    isTeam: 5,
+    isFeatured: true,
+    links: [
+      { label: "보고서", url: "https://drive.google.com/file/d/1Vi0U_Vm62JZ2iniUKFIOUyiQ1nxdpeZH/view?usp=sharing" },
+      { label: "시연 영상", url: "https://drive.google.com/file/d/10jzluNJcvNDLESfXqC8NdckSsfC1crrM/view?usp=drive_link" },
+      { label: "GitHub", url: "https://github.com/human13th2team/nexus" },
+      { label: "GitHub (K8s)", url: "https://github.com/yujetak/nexus" }
+    ],
+    category: "team",
   },
 ];
 

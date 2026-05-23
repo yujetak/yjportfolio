@@ -26,9 +26,9 @@
 - **Role**: NRF 석사과정생 연구장려금 지원사업 연구책임자 (PI)
 - **Highlight**: RAG 기술을 접목하여 특화 언어인 P4_16 코드 템플릿 생성 연구, **2025 KCC 우수발표논문상 수상** 및 정보과학회 논문 게재 예정.
 
-### 2. StockLab - 실시간 시세 기반 모의투자 플랫폼
-- **Role**: 프로젝트 리더 (PL), 풀스택 개발 (6인)
-- **Highlight**: KIS API 연동 실시간 시세 수집 및 Redis 캐싱, APScheduler 기반 배치 프로세스 자동화, JWT 권한 검증이 도입된 모시 대시보드 어드민 페이지 풀스택 구현.
+### 2. Nexus - 올인원 창업지원 서비스
+- **Role**: 창업 시뮬레이션 기능 개발, 예측 모델 개발 및 인프라 배포 (PL, 5인)
+- **Highlight**: 공공데이터(상업용 부동산 실거래가 API) 및 벡터 검색 기반 업종별 필수 설비 매핑, 카카오지도/소상공인 API 활용 실시간 상권 표시, XGBoost/CatBoost 기반 창업 성공 예측 AI 모델 구축, 백엔드 클라우드(Render, Huggingface 등) 배포 및 Docker/Kubernetes 도입.
 
 ### 3. DNN 기반 신용점수 예측 및 RAG 챗봇 서비스
 - **Role**: DL / RAG Engineering (개인)
